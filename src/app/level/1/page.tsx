@@ -10,6 +10,7 @@ import {
   TrendingDown, TrendingUp, Search, AlertCircle
 } from 'lucide-react'
 import HintsButton from '@/components/HintsButton'
+import { useTranslation } from '@/hooks/useTranslation'
 
 // Types
 interface Community {
