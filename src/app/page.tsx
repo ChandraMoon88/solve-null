@@ -36,11 +36,11 @@ export default function HomePage() {
   }, [currentLine])
 
   return (
-    <main className="relative min-h-screen flex flex-col items-center justify-center p-4 overflow-hidden">
+    <main className="relative min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 overflow-hidden">
       {/* Animated Background Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute w-96 h-96 rounded-full bg-void-500/20 blur-3xl"
+          className="absolute w-64 h-64 sm:w-96 sm:h-96 rounded-full bg-void-500/20 blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -50,7 +50,7 @@ export default function HomePage() {
           style={{ top: '10%', left: '10%' }}
         />
         <motion.div
-          className="absolute w-80 h-80 rounded-full bg-consciousness-500/10 blur-3xl"
+          className="absolute w-48 h-48 sm:w-80 sm:h-80 rounded-full bg-consciousness-500/10 blur-3xl"
           animate={{
             x: [0, -80, 0],
             y: [0, 60, 0],
@@ -66,15 +66,15 @@ export default function HomePage() {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-center mb-12 relative z-10"
+        className="text-center mb-8 sm:mb-12 relative z-10"
       >
         <motion.div
-          className="inline-flex items-center justify-center mb-6"
+          className="inline-flex items-center justify-center mb-4 sm:mb-6"
           animate={{ rotate: 360 }}
           transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
         >
           <div className="relative">
-            <Brain className="w-20 h-20 text-void-400" />
+            <Brain className="w-16 h-16 sm:w-20 sm:h-20 text-void-400" />
             <motion.div
               className="absolute inset-0 flex items-center justify-center"
               animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}

@@ -64,16 +64,16 @@ export default function AchievementsPanel() {
       {/* Floating Achievements Button */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 left-6 z-50 glass border border-void-500/40 rounded-full p-4 hover:border-amber-500/60 transition-all group"
+        className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-50 glass border border-void-500/40 rounded-full p-3 sm:p-4 hover:border-amber-500/60 transition-all group"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        <Trophy className="w-6 h-6 text-amber-400 group-hover:text-amber-300" />
+        <Trophy className="w-5 h-5 sm:w-6 sm:h-6 text-amber-400 group-hover:text-amber-300" />
         {isMounted && progress.unlocked > 0 && (
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            className="absolute -top-1 -right-1 w-6 h-6 bg-amber-500 rounded-full flex items-center justify-center text-xs font-bold"
+            className="absolute -top-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 bg-amber-500 rounded-full flex items-center justify-center text-xs font-bold"
           >
             {progress.unlocked}
           </motion.div>

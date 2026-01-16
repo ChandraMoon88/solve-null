@@ -88,11 +88,11 @@ export default function StatsButton() {
       {/* Floating Stats Button */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="fixed top-24 right-6 z-50 glass border border-void-500/40 rounded-full p-4 hover:border-cyan-500/60 transition-all group"
+        className="fixed top-16 right-4 sm:top-24 sm:right-6 z-50 glass border border-void-500/40 rounded-full p-3 sm:p-4 hover:border-cyan-500/60 transition-all group"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        <BarChart3 className="w-6 h-6 text-cyan-400 group-hover:text-cyan-300" />
+        <BarChart3 className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 group-hover:text-cyan-300" />
       </motion.button>
 
       {/* Stats Modal */}
