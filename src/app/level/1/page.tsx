@@ -83,6 +83,7 @@ const irrelevantMetrics = [
 ]
 
 export default function Level1Page() {
+  const { t } = useTranslation()
   const [phase, setPhase] = useState<'intro' | 'active' | 'questioning' | 'revelation' | 'complete'>('intro')
   const [communities, setCommunities] = useState<Community[]>(initialCommunities)
   const [wells, setWells] = useState<Well[]>(initialWells)
