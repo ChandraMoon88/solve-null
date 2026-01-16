@@ -40,7 +40,7 @@ const initialLevelProgress: LevelProgress[] = Array.from({ length: 11 }, (_, i) 
   unlockedAt: i === 0 || i === 1 ? new Date().toISOString() : undefined, // Level 0 and 1 unlocked by default
 }))
 
-const ADMIN_PASSWORD = '9912885974familycomplete'
+const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD || ''
 
 export const useProgressStore = create<ProgressState>()(
   persist(
