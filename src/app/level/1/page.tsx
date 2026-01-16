@@ -877,7 +877,7 @@ export default function Level1Page() {
                   whileHover={{ scale: 1.05 }}
                   className="px-8 py-4 glass rounded-xl font-display font-bold text-void-300 hover:text-white transition-colors"
                 >
-                  Return to Levels
+                  {t.levelUI.returnToLevels}
                 </motion.button>
               </Link>
               <Link href="/level/2">
@@ -885,7 +885,7 @@ export default function Level1Page() {
                   whileHover={{ scale: 1.05 }}
                   className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl font-display font-bold text-white"
                 >
-                  Continue to Level 2
+                  {t.levelUI.nextLevel}
                 </motion.button>
               </Link>
             </div>
