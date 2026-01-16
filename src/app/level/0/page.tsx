@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, CircleOff, AlertTriangle, Check, Skull, Infinity, Clock } from 'lucide-react'
+import { ArrowLeft, CircleOff, AlertTriangle, Check, Skull, Infinity as InfinityIcon, Clock } from 'lucide-react'
 
 export default function LevelNullPage() {
   const [phase, setPhase] = useState<'intro' | 'choice' | 'aftermath' | 'final'>('intro')
@@ -195,7 +195,7 @@ export default function LevelNullPage() {
                 
                 <div className="relative">
                   <div className="flex items-center gap-3 mb-4">
-                    <Infinity className="w-8 h-8 text-purple-700" />
+                    <InfinityIcon className="w-8 h-8 text-purple-700" />
                     <span className="font-display font-bold text-2xl text-purple-400">
                       {glitchText('CONTINUE TO 100%')}
                     </span>
@@ -298,7 +298,7 @@ export default function LevelNullPage() {
                     animate={{ scale: 1 }}
                     className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-900 to-black flex items-center justify-center"
                   >
-                    <Infinity className="w-10 h-10 text-purple-500" />
+                    <InfinityIcon className="w-10 h-10 text-purple-500" />
                   </motion.div>
 
                   <h2 className="font-display font-bold text-2xl text-purple-400 text-center">

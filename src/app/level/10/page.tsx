@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { 
   ArrowLeft, Star, Sparkles, Check, Globe, Rocket, Heart, 
-  Brain, Zap, Eye, Atom, Infinity, Radio, Waves
+  Brain, Zap, Eye, Atom, Infinity as InfinityIcon, Radio, Waves
 } from 'lucide-react'
 import { useProgressStore } from '@/store/progressStore'
 
@@ -458,7 +458,7 @@ export default function Level10() {
                       <div className="flex items-center gap-4">
                         <Sparkles className="w-7 h-7" />
                         <span>Accept the Truth</span>
-                        <Infinity className="w-7 h-7" />
+                        <InfinityIcon className="w-7 h-7" />
                       </div>
                     </button>
                   </motion.div>
@@ -536,4 +536,4 @@ export default function Level10() {
       </main>
     </LevelGuard>
   )
-}
+}

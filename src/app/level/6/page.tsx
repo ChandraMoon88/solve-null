@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ArrowLeft, Book, Eye, Sparkles, Check, Infinity } from 'lucide-react'
+import { ArrowLeft, Book, Eye, Sparkles, Check, Infinity as InfinityIcon } from 'lucide-react'
 
 export default function Level6() {
   const [phase, setPhase] = useState<'intro' | 'library' | 'discovery' | 'complete'>('intro')
@@ -66,7 +66,7 @@ export default function Level6() {
         {phase === 'library' && (
           <motion.div key="library" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="max-w-5xl mx-auto">
             <div className="glass rounded-xl p-8 mb-8 text-center">
-              <Infinity className="w-16 h-16 text-purple-400 mx-auto mb-4 animate-spin" style={{ animationDuration: '8s' }} />
+              <InfinityIcon className="w-16 h-16 text-purple-400 mx-auto mb-4 animate-spin" style={{ animationDuration: '8s' }} />
               <div className="text-4xl font-display font-bold text-white mb-2">{observerCount} Observers</div>
               <p className="text-void-400">Each cataloging a different infinity</p>
             </div>
