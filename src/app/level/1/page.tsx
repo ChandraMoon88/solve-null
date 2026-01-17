@@ -179,7 +179,7 @@ export default function Level1Page() {
   }, [phase, revelationStep])
 
   // Calculate community status based on water levels
-  const getStatus = (current: number, need: number): Community[{t.levelUI.status}] => {
+  const getStatus = (current: number, need: number): Community['status'] => {
     const ratio = current / need
     if (ratio >= 0.7) return 'healthy'
     if (ratio >= 0.4) return 'stressed'

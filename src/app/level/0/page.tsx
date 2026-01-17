@@ -360,7 +360,7 @@ export default function LevelNullPage() {
                 onClick={() => setPhase('final')}
                 className="mt-8 w-full py-4 bg-black border border-gray-800 hover:border-gray-700 rounded-xl font-display font-bold text-gray-500 transition-colors"
               >
-                {glitchText({t.levelUI.continue})}
+                {glitchText(t.levelUI.continue)}
               </motion.button>
             </div>
           </motion.div>
