@@ -4,24 +4,26 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { Brain, Sparkles, Eye, ChevronRight, Zap } from 'lucide-react'
-import { useTranslation } from '@/hooks/useTranslation'
+import { useAutoTranslateArray } from '@/hooks/useTranslation'
+import { Translate } from '@/components/Translate'
 import WelcomeTour from '@/components/WelcomeTour'
 
 export default function HomePage() {
-  const { t } = useTranslation()
   const [currentLine, setCurrentLine] = useState(0)
   const [showContent, setShowContent] = useState(false)
   const [typingComplete, setTypingComplete] = useState(false)
 
-  const introText = [
-    t.home.welcome,
-    t.home.journey,
-    t.home.notExperience,
-    t.home.testIntelligence,
-    t.home.levelsAwait,
-    t.home.challenge,
-    t.home.ready
+  const introTextEnglish = [
+    "Welcome to the Null Protocol.",
+    "A journey through 11 transformative levels.",
+    "This is not an experience. It's a test.",
+    "Each level will challenge your intelligence, logic, and willingness to surrender control.",
+    "11 levels await. Each harder than the last.",
+    "Are you ready to discover what you truly are?",
+    "Begin your journey."
   ]
+  
+  const introText = useAutoTranslateArray(introTextEnglish)
 
   useEffect(() => {
     if (currentLine < introText.length) {
@@ -87,9 +89,9 @@ export default function HomePage() {
 
         <h1 className="text-6xl md:text-8xl font-display font-black tracking-wider mb-4">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-void-300 via-void-400 to-void-500 text-glow">
-            {t.home.solveNull.split(' ')[0]}
+            <Translate>SOLVE</Translate>
           </span>
-          <span className="text-white ml-4">{t.home.solveNull.split(' ')[1] || 'NULL'}</span>
+          <span className="text-white ml-4"><Translate>NULL</Translate></span>
         </h1>
 
         <motion.p
@@ -98,7 +100,7 @@ export default function HomePage() {
           transition={{ delay: 0.5 }}
           className="text-void-300 text-xl font-mono tracking-widest"
         >
-          {t.home.protocol}
+          <Translate>THE NULL PROTOCOL</Translate>
         </motion.p>
       </motion.div>
 
@@ -145,7 +147,7 @@ export default function HomePage() {
               className="group relative px-10 py-5 bg-gradient-to-r from-void-600 to-void-500 rounded-xl font-display font-bold text-xl text-white border border-void-400/50 overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-3">
-                {t.home.begin}
+                <Translate>BEGIN THE PROTOCOL</Translate>
                 <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </span>
               <motion.div
@@ -161,7 +163,7 @@ export default function HomePage() {
               className="px-10 py-5 glass rounded-xl font-display font-bold text-xl text-void-300 hover:text-white border border-void-500/30 hover:border-void-400/50 transition-all flex items-center gap-3"
             >
               <Eye className="w-6 h-6" />
-              {t.home.about}
+              <Translate>LEARN MORE</Translate>
             </motion.button>
           </Link>
         </motion.div>
