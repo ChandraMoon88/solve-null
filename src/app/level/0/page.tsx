@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, CircleOff, AlertTriangle, Check, Skull, Infinity as InfinityIcon, Clock } from 'lucide-react'
+import { useTranslation } from '@/hooks/useTranslation'
 
 export default function LevelNullPage() {
   const [phase, setPhase] = useState<'intro' | 'choice' | 'aftermath' | 'final'>('intro')
@@ -359,7 +360,7 @@ export default function LevelNullPage() {
                 onClick={() => setPhase('final')}
                 className="mt-8 w-full py-4 bg-black border border-gray-800 hover:border-gray-700 rounded-xl font-display font-bold text-gray-500 transition-colors"
               >
-                {glitchText('Continue')}
+                {glitchText({t.levelUI.continue})}
               </motion.button>
             </div>
           </motion.div>
