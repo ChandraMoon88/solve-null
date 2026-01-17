@@ -9,6 +9,7 @@ import {
   Rewind, FastForward, Shuffle, Layers, Brain,
   Sparkles, Split, Merge, Activity, Zap
 } from 'lucide-react'
+import { useTranslation } from '@/hooks/useTranslation'
 
 // Types
 interface Witness {
@@ -107,6 +108,7 @@ const timelineEvents: TimelineEvent[] = [
 ]
 
 export default function Level2Page() {
+  const { t } = useTranslation()
   const [phase, setPhase] = useState<'intro' | 'investigation' | 'realization' | 'superposition' | 'complete'>('intro')
   const [witnesses, setWitnesses] = useState<Witness[]>(initialWitnesses)
   const [selectedWitness, setSelectedWitness] = useState<string | null>(null)
@@ -120,24 +122,24 @@ export default function Level2Page() {
   const [acceptedSuperposition, setAcceptedSuperposition] = useState(false)
 
   const introTexts = [
-    "Something happened at 3:47 PM. Or 3:52. Or both. Or neither.",
-    "Four witnesses. Four stories. Zero consensus.",
-    "Your task: determine what actually happened.",
-    "Interview the witnesses. Reconstruct the timeline.",
-    "Find the truth.",
-    "But what if there is no single truth?",
-    "What if reality itself is the question?"
+    t.level2.intro1,
+    t.level2.intro2,
+    t.level2.intro3,
+    t.level2.intro4,
+    t.level2.intro5,
+    t.level2.intro6,
+    t.level2.intro7
   ]
 
   const realizationTexts = [
-    "You've been trying to collapse the wavefunction.",
-    "To force multiple truths into one narrative.",
-    "But quantum mechanics teaches us: observation changes the observed.",
-    "Each witness's memory isn't wrong—it's incomplete.",
-    "They each experienced a different projection of the same event.",
-    "The 'truth' isn't hidden. It's superposed.",
-    "What if you stopped trying to choose one reality...",
-    "...and accepted them all?"
+    t.level2.realization1,
+    t.level2.realization2,
+    t.level2.realization3,
+    t.level2.realization4,
+    t.level2.realization5,
+    t.level2.realization6,
+    t.level2.realization7,
+    t.level2.realization8
   ]
 
   // Intro animation
