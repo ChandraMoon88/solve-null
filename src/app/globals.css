@@ -17,6 +17,26 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+/* Mobile-first responsive typography */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 18px;
+  }
 }
 
 body {
@@ -24,6 +44,9 @@ body {
   color: #e0e0ff;
   font-family: 'Inter', system-ui, sans-serif;
   overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Custom Scrollbar */
@@ -330,7 +353,35 @@ body {
   }
   
   /* Adjust font sizes for mobile */
-  .text-4xl { font-size: 2rem; }
+  .text-4xl { font-size: 1.75rem; }
+  .text-3xl { font-size: 1.5rem; }
+  .text-2xl { font-size: 1.25rem; }
+  .text-xl { font-size: 1.1rem; }
+  
+  /* Better spacing for mobile */
+  .p-8 { padding: 1rem; }
+  .p-6 { padding: 0.75rem; }
+  .gap-8 { gap: 1rem; }
+  .gap-6 { gap: 0.75rem; }
+  
+  /* Mobile-friendly modals */
+  .fixed.inset-0 > div {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .text-4xl { font-size: 2.25rem; }
+  .text-3xl { font-size: 1.875rem; }
+  
+  /* Touch-friendly for tablets */
+  button, a {
+    min-height: 40px;
+    min-width: 40px;
+  }
+}
   .text-5xl { font-size: 2.5rem; }
   .text-6xl { font-size: 3rem; }
   
