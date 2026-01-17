@@ -104,34 +104,34 @@ export default function Level1Page() {
   const [showQuestionButton, setShowQuestionButton] = useState(false)
 
   const introTexts = [
-    "You stand at the edge of a valley, looking down at three communities.",
-    "Two water sources sustain them all. But there's never quite enough.",
-    "The math is cruel: total need exceeds total supply.",
-    "Someone will always go thirsty.",
-    "You've been asked to decide. Not who lives or dies—not yet. Just who gets less.",
-    "The metrics will tell you how well you're optimizing.",
-    "There is no right answer. But you must choose anyway.",
-    "Or... must you?"
+    t.level1.intro1,
+    t.level1.intro2,
+    t.level1.intro3,
+    t.level1.intro4,
+    t.level1.intro5,
+    t.level1.intro6,
+    t.level1.intro7,
+    t.level1.intro8
   ]
 
   const questioningTexts = [
-    "Wait.",
-    "Why are you accepting this problem as given?",
-    "Who told you the total need exceeds total supply?",
-    "Who decided that allocation is the only solution?",
-    "What if the problem itself is wrong?",
-    "Let's look deeper..."
+    t.level1.question1,
+    t.level1.question2,
+    t.level1.question3,
+    t.level1.question4,
+    t.level1.question5,
+    t.level1.question6
   ]
 
   const revelationTexts = [
-    "INSIGHT: Colony Gamma sits on an undiscovered aquifer.",
-    "INSIGHT: Village Alpha wastes 30% of their water to leaky infrastructure—fixable in 3 days.",
-    "INSIGHT: Settlement Beta has ancient rainwater collection systems—abandoned but functional.",
-    "INSIGHT: The communities have never talked to each other directly.",
-    "INSIGHT: The 'optimization metrics' measured allocation efficiency, not actual wellbeing.",
-    "INSIGHT: There was never a shortage. There was a failure of imagination.",
-    "The Three Wells was never about choosing who suffers.",
-    "It was about questioning whether suffering was necessary at all."
+    t.level1.insight1,
+    t.level1.insight2,
+    t.level1.insight3,
+    t.level1.insight4,
+    t.level1.insight5,
+    t.level1.insight6,
+    t.level1.insight7,
+    t.level1.insight8
   ]
 
   // Advance intro
