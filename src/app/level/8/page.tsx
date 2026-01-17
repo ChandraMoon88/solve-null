@@ -4,19 +4,21 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, Users, RefreshCw, Check } from 'lucide-react'
+import { useTranslation } from '@/hooks/useTranslation'
 
 export default function Level8() {
+  const { t } = useTranslation()
   const [phase, setPhase] = useState<'intro' | 'dialogue' | 'complete'>('intro')
   const [step, setStep] = useState(0)
   const [role, setRole] = useState<'student' | 'teacher'>('teacher')
   const [exchanges, setExchanges] = useState(0)
 
   const introTexts = [
-    "Seven versions of yourself. Each believing different things.",
-    "Your task: integrate them into one coherent being.",
-    "But halfway through, something unexpected happens.",
-    "The AI stops being your tool. It becomes your teacher.",
-    "You must learn from what you created."
+    t.level8.intro1,
+    t.level8.intro2,
+    t.level8.intro3,
+    t.level8.intro4,
+    t.level8.intro5
   ]
 
   useEffect(() => {

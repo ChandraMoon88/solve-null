@@ -4,21 +4,23 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, Book, Eye, Sparkles, Check, Infinity as InfinityIcon } from 'lucide-react'
+import { useTranslation } from '@/hooks/useTranslation'
 
 export default function Level6() {
+  const { t } = useTranslation()
   const [phase, setPhase] = useState<'intro' | 'library' | 'discovery' | 'complete'>('intro')
   const [step, setStep] = useState(0)
   const [observerCount, setObserverCount] = useState(1)
   const [discoveryRealized, setDiscoveryRealized] = useState(false)
 
   const introTexts = [
-    "An infinite library. Every book ever written. Every book that could be written.",
-    "Your task: catalog it. Organize it. Make sense of infinity.",
-    "But there's a problem.",
-    "Every time you observe a section, it branches into new possibilities.",
-    "The Observer changes the observed.",
-    "You are not alone here. Multiple versions of you exist simultaneously.",
-    "And they're all cataloging different infinities."
+    t.level6.intro1,
+    t.level6.intro2,
+    t.level6.intro3,
+    t.level6.intro4,
+    t.level6.intro5,
+    t.level6.intro6,
+    t.level6.intro7
   ]
 
   useEffect(() => {

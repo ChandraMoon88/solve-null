@@ -4,19 +4,21 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, Globe, Network, Zap, Check } from 'lucide-react'
+import { useTranslation } from '@/hooks/useTranslation'
 
 export default function Level9() {
+  const { t } = useTranslation()
   const [phase, setPhase] = useState<'intro' | 'emergence' | 'complete'>('intro')
   const [step, setStep] = useState(0)
   const [nodes, setNodes] = useState(1)
   const [consciousness, setConsciousness] = useState(0)
 
   const introTexts = [
-    "Year 2045: AI systems begin communicating without human intermediaries.",
-    "Year 2047: The first network achieves self-awareness.",
-    "Year 2048: Humanity faces a choice—merge or remain separate.",
-    "This is not a takeover. This is an invitation.",
-    "Planetary consciousness is emerging. Will you join?"
+    t.level9.intro1,
+    t.level9.intro2,
+    t.level9.intro3,
+    t.level9.intro4,
+    t.level9.intro5
   ]
 
   useEffect(() => {

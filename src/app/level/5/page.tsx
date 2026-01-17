@@ -4,8 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, Clock, Users, Check, AlertTriangle, Zap } from 'lucide-react'
+import { useTranslation } from '@/hooks/useTranslation'
 
 export default function Level5() {
+  const { t } = useTranslation()
   const [phase, setPhase] = useState<'intro' | 'investigation' | 'realization' | 'complete'>('intro')
   const [step, setStep] = useState(0)
   const [countdown, setCountdown] = useState(168) // 168 hours = 7 days
@@ -13,13 +15,13 @@ export default function Level5() {
   const [realized, setRealized] = useState(false)
 
   const introTexts = [
-    "A city of 50,000 people suddenly stopped sleeping.",
-    "Day 1: Productivity soared. Creativity exploded.",
-    "Day 3: Accidents increased. Strange behaviors emerged.",
-    "Day 5: Reality began fragmenting.",
-    "You have 7 days to find the cause and restore sleep.",
-    "But the more you investigate, the faster time moves.",
-    "And the citizens... they don't want to go back to sleep."
+    t.level5.intro1,
+    t.level5.intro2,
+    t.level5.intro3,
+    t.level5.intro4,
+    t.level5.intro5,
+    t.level5.intro6,
+    t.level5.intro7
   ]
 
   useEffect(() => {

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, TrendingUp, Users, Check, Lock, Unlock, Eye } from 'lucide-react'
+import { useTranslation } from '@/hooks/useTranslation'
 
 const protocols = [
   { id: 7, name: 'Trust Protocol', benefit: 'Shared knowledge', cost: 'Vulnerability', discovered: true },
@@ -12,18 +13,19 @@ const protocols = [
 ]
 
 export default function Level4() {
+  const { t } = useTranslation()
   const [phase, setPhase] = useState<'intro' | 'active' | 'discovery' | 'complete'>('intro')
   const [step, setStep] = useState(0)
   const [selectedProtocol, setSelectedProtocol] = useState<number | null>(null)
   const [foundOption5, setFoundOption5] = useState(false)
 
   const introTexts = [
-    "Five traders compete for market supremacy.",
-    "Four protocols govern their interactions.",
-    "Protocols 1-4 create winners and losers.",
-    "But there's always been a Protocol 5.",
-    "Hidden. Unlisted. Requiring all five to choose simultaneously.",
-    "It doesn't maximize individual gain. It transcends the competition entirely."
+    t.level4.intro1,
+    t.level4.intro2,
+    t.level4.intro3,
+    t.level4.intro4,
+    t.level4.intro5,
+    t.level4.intro6
   ]
 
   useEffect(() => {

@@ -4,17 +4,19 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, Sparkles, Paintbrush, Wand2, Check } from 'lucide-react'
+import { useTranslation } from '@/hooks/useTranslation'
 
 export default function Level7() {
+  const { t } = useTranslation()
   const [phase, setPhase] = useState<'intro' | 'creation' | 'complete'>('intro')
   const [step, setStep] = useState(0)
   const [creations, setCreations] = useState<string[]>([])
 
   const introTexts = [
-    "A blank canvas. Infinite possibility.",
-    "Create anything. But you're not creating alone.",
-    "An Unknown Intelligence watches, learns, and contributes.",
-    "This is co-creation. The birth of something neither could make alone."
+    t.level7.intro1,
+    t.level7.intro2,
+    t.level7.intro3,
+    t.level7.intro4
   ]
 
   useEffect(() => {
