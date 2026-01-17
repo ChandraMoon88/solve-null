@@ -207,6 +207,11 @@ export default function Level2Page() {
     t.level2.realization8
   ]
 
+  // Update witnesses when language changes
+  useEffect(() => {
+    setWitnesses(getInitialWitnesses())
+  }, [getInitialWitnesses])
+
   // Intro animation
   useEffect(() => {
     if (phase === 'intro' && introStep < introTexts.length) {
