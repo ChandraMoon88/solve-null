@@ -110,7 +110,72 @@ const timelineEvents: TimelineEvent[] = [
 export default function Level2Page() {
   const { t } = useTranslation()
   const [phase, setPhase] = useState<'intro' | 'investigation' | 'realization' | 'superposition' | 'complete'>('intro')
-  const [witnesses, setWitnesses] = useState<Witness[]>(initialWitnesses)
+  
+  // Initialize witnesses with translations
+  const getInitialWitnesses = useCallback((): Witness[] => [
+    {
+      id: 'w1',
+      name: t.level2.witness1,
+      avatar: '👨‍💼',
+      testimony: [
+        t.level2.testimony1_1,
+        t.level2.testimony1_2,
+        t.level2.testimony1_3,
+        t.level2.testimony1_4
+      ],
+      certainty: 85,
+      memoryState: 'stable',
+      currentVersion: 0,
+      perception: 'visual'
+    },
+    {
+      id: 'w2', 
+      name: t.level2.witness2,
+      avatar: '👩‍🔬',
+      testimony: [
+        t.level2.testimony2_1,
+        t.level2.testimony2_2,
+        t.level2.testimony2_3,
+        t.level2.testimony2_4
+      ],
+      certainty: 78,
+      memoryState: 'stable',
+      currentVersion: 0,
+      perception: 'auditory'
+    },
+    {
+      id: 'w3',
+      name: t.level2.witness3,
+      avatar: '👨‍🎨',
+      testimony: [
+        t.level2.testimony3_1,
+        t.level2.testimony3_2,
+        t.level2.testimony3_3,
+        t.level2.testimony3_4
+      ],
+      certainty: 62,
+      memoryState: 'stable',
+      currentVersion: 0,
+      perception: 'emotional'
+    },
+    {
+      id: 'w4',
+      name: t.level2.witness4,
+      avatar: '👩‍⚕️',
+      testimony: [
+        t.level2.testimony4_1,
+        t.level2.testimony4_2,
+        t.level2.testimony4_3,
+        t.level2.testimony4_4
+      ],
+      certainty: 45,
+      memoryState: 'stable',
+      currentVersion: 0,
+      perception: 'temporal'
+    }
+  ], [t])
+  
+  const [witnesses, setWitnesses] = useState<Witness[]>(getInitialWitnesses())
   const [selectedWitness, setSelectedWitness] = useState<string | null>(null)
   const [timelinePosition, setTimelinePosition] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
