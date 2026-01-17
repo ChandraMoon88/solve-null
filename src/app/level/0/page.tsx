@@ -7,6 +7,7 @@ import { ArrowLeft, CircleOff, AlertTriangle, Check, Skull, Infinity as Infinity
 import { useTranslation } from '@/hooks/useTranslation'
 
 export default function LevelNullPage() {
+  const { t } = useTranslation()
   const [phase, setPhase] = useState<'intro' | 'choice' | 'aftermath' | 'final'>('intro')
   const [introStep, setIntroStep] = useState(0)
   const [choice, setChoice] = useState<'transcend' | 'remain' | null>(null)
