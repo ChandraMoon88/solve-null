@@ -111,6 +111,7 @@ const corruptionRules: CorruptionRule[] = [
 ]
 
 export default function Level3Page() {
+  const { t } = useTranslation()
   const [phase, setPhase] = useState<'intro' | 'monitoring' | 'realization' | 'abdication' | 'complete'>('intro')
   const [sleepers, setSleepers] = useState<Sleeper[]>(initialSleepers)
   const [selectedSleeper, setSelectedSleeper] = useState<string | null>(null)
