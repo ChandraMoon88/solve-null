@@ -9,6 +9,7 @@ import {
   Zap, Radio, Volume2, VolumeX, Eye, EyeOff,
   RefreshCw, Crown, Sparkles, Brain
 } from 'lucide-react'
+import { useTranslation } from '@/hooks/useTranslation'
 
 // Types
 interface Sleeper {
