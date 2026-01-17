@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, TrendingUp, Users, Check, Lock, Unlock, Eye } from 'lucide-react'
-import { useTranslation } from '@/hooks/useTranslation'
+import { useAutoTranslateArray } from '@/hooks/useTranslation'
+import { Translate } from '@/components/Translate'
 
 const protocols = [
   { id: 7, name: 'Trust Protocol', benefit: 'Shared knowledge', cost: 'Vulnerability', discovered: true },
@@ -13,20 +14,21 @@ const protocols = [
 ]
 
 export default function Level4() {
-  const { t } = useTranslation()
   const [phase, setPhase] = useState<'intro' | 'active' | 'discovery' | 'complete'>('intro')
   const [step, setStep] = useState(0)
   const [selectedProtocol, setSelectedProtocol] = useState<number | null>(null)
   const [foundOption5, setFoundOption5] = useState(false)
 
-  const introTexts = [
-    t.level4.intro1,
-    t.level4.intro2,
-    t.level4.intro3,
-    t.level4.intro4,
-    t.level4.intro5,
-    t.level4.intro6
+  const introTextsEnglish = [
+    "Five traders compete for market supremacy.",
+    "Four protocols govern their interactions.",
+    "One trader discovers a fifth protocol—not in the rules.",
+    "It lets them manipulate the game from outside.",
+    "What do they do?",
+    "Choose their path."
   ]
+  
+  const introTexts = useAutoTranslateArray(introTextsEnglish)
 
   useEffect(() => {
     if (phase === 'intro' && step < introTexts.length) {
@@ -43,16 +45,20 @@ export default function Level4() {
         <Link href="/levels">
           <motion.button whileHover={{ x: -5 }} className="flex items-center gap-2 text-void-400 hover:text-void-300 mb-4">
             <ArrowLeft className="w-5 h-5" />
-            <span className="font-mono">EXIT LEVEL</span>
+            <span className="font-mono"><Translate>EXIT LEVEL</Translate></span>
           </motion.button>
         </Link>
         <div className="flex items-center gap-3 mb-2">
           <div className="p-2 rounded-lg bg-gradient-to-br from-orange-500 to-red-600">
             <TrendingUp className="w-6 h-6 text-white" />
           </div>
-          <h1 className="text-3xl font-display font-bold text-white">Level 4: The Five Traders</h1>
+          <h1 className="text-3xl font-display font-bold text-white">
+            <Translate>Level 4: The Five Traders</Translate>
+          </h1>
         </div>
-        <p className="text-void-400 font-mono">PROTOCOL DISCOVERY CHALLENGE</p>
+        <p className="text-void-400 font-mono">
+          <Translate>PROTOCOL DISCOVERY CHALLENGE</Translate>
+        </p>
       </motion.div>
 
       <AnimatePresence mode="wait">
